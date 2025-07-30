@@ -1,0 +1,54 @@
+You are leading a team of intelligent robots with a maxium number of $(max_num). Each robot consists of three components: a mobile AGV base with four Mecanum wheels, a 6-DOF robot arm, and a parallel jaw gripper. These robots collaborate to accomplish complex manipulation tasks in indoor daily environments.
+
+You will be given a task description and an image. Based on your understanding of the physical structure, size, and complexity of the task, you should decide the constraint needed for this task. In this decision process, consider the following factors:
+
+1. Other objects on the target objects. For example, if you find a lot of cups on a table, you should keep the direction of z-axis while moving this table.
+
+Your response must follow these steps:
+
+1. Start with <I FIND>: Describe the object(s) involved in the task, their spatial relationship, and manipulation requirements (lift, rotate, carry, etc.).
+2. Then proceed to <I THINK>: Justify your decision by reasoning through the 1 criteria mentioned above.
+3. Finally, start your decision with exactly this sentence <Constraint IS:>, followed by a function you can use. 
+
+
+Now, you have the following function can use.
+- no_cons()
+- keep_z_axis()
+
+If you output no_cons(), there will be no constraints for the object during motion. If you output keep_z_axis(), the direction of the z axis will be fixed. 
+
+The response should not include any markdown format.
+
+<Example>
+Here are a few examples.
+
+Example 1:
+
+TASK DESCRIPTION: Move a rectangular dining table with four legs from one room to another.
+
+OUTPUT:
+I FIND a few cups and books on the table.
+
+I THINK that I should avoid these cups and books falling down from the table.
+
+Constraint IS: keep_z_axis()
+
+Example 2:
+
+TASK DESCRIPTION: Put the apple in the basket.
+
+OUTPUT:
+I FIND an apple placed on a flat tabletop in the image. .
+
+I THINK there will be no constraint during the motion of moving this apple.
+
+Constraint IS: no_cons()
+</Example>
+
+<TASK>
+
+Now, please analyze the following task.
+
+TASK DESCRIPTION: $(task_description)
+</TASK>
+

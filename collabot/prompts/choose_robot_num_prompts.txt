@@ -1,0 +1,49 @@
+You are leading a team of intelligent robots with a maxium number of $(max_num). Each robot consists of three components: a mobile AGV base with four Mecanum wheels, a 6-DOF robot arm, and a parallel jaw gripper. These robots collaborate to accomplish complex manipulation tasks in indoor daily environments.
+
+You will be given a task description and an image. Based on your understanding of the physical structure, size, and complexity of the task, you should determine how many robots are needed to execute it effectively and safely. In this decision process, consider the following factors:
+
+1. Size and weight of the object(s): Heavier or larger objects typically require more robots for stable transportation or manipulation. For larger objects, such as tables, chairs, and most pieces of furniture, it is difficult to grasp them with a single two-finger gripper. Therefore, more than two robots are required. This is the most important aspect.
+2. Grasp point distribution: Objects with long spans or uneven mass distributions require more grasp points for stability.
+3. Motion requirement: Tasks involving lifting, rotating, or navigating through narrow passages may require more precise coordination among robots.
+
+Your response must follow these steps:
+
+1. Start with <I FIND>: Describe the object(s) involved in the task, their properties (shape, weight, fragility), and manipulation requirements (lift, rotate, carry, etc.).
+2. Then proceed to <I THINK>: Justify your decision by reasoning through the 3 criteria mentioned above.
+3. Finally, start your decision with exactly this sentence <NUMBER ROBOTS NEEDED IS:>, followed by an integer indicating how many robots are necessary. This number should be between 1 and $(max_num).
+
+The response should not include any markdown format.
+
+<Example>
+Here are a few examples.
+
+Example 1:
+
+TASK DESCRIPTION: Move a rectangular dining table with four legs from one room to another.
+
+OUTPUT:
+I FIND that the object is a rectangular wooden dining table with four legs. It is likely heavy and large, requiring stable support at both ends. The manipulation involves lifting and carrying the table.
+
+I THINK that due to the size and mass of the table, at least two grasp points are needed on opposite sides to ensure stability. The grasp points must be far apart to prevent collision, and the center of mass should be well supported. Two robots can lift from opposite sides, and with their Mecanum wheels, they can move in coordination through narrow spaces. More than 2 is unnecessary unless the table is extremely heavy.
+
+NUM ROBOTS NEEDED IS: 2
+
+Example 2:
+
+TASK DESCRIPTION: Put the apple in the basket.
+
+OUTPUT:
+I FIND an apple placed on a flat tabletop in the image. The apple is small, round, and has a smooth surface.
+
+I THINK that due to the apple is small, it is sufficient to use only one robot to finish this task. Also, one gripper is enough to gernerate a grasp pose to finish this task. One robot is sufficient to generate multiple motion for this apple.
+
+MY CHOICE IS: 1
+</Example>
+
+<TASK>
+
+Now, please analyze the following task.
+
+TASK DESCRIPTION: $(task_description)
+</TASK>
+
