@@ -176,3 +176,8 @@ cython_debug/
 *real*
 *exp*
 *cafe_table*
+
+#supporting files
+/gazebo_plugins/
+/model_description/
+/robot_gazebo/

@@ -39,7 +39,9 @@ pip install -r requirements.txt
 pip install -r requirements_SEEM.txt
 ```
 
-- Download seem_focall_v0.pt in [This Link](https://huggingface.co/xdecoder/SEEM/resolve/main/seem_focall_v0.pt) to install SEEM. Then, put it into `./collabot/models/models`
+If you find some problem install `mpi4py`, you can run `conda install mpi4py==3.1.5`. Then, continue to run `pip install -r requirements.txt`.
+
+- Download seem_focall_v0.pt in [This Link](https://huggingface.co/xdecoder/SEEM/resolve/main/seem_focall_v0.pt) to install SEEM. Then, put it into `./collabot/models/`
 
 - Download our trained LoGNet from [Google Drive](https://drive.google.com/file/d/1YkEzUa1G8f6yWOn-E3VEBbKtDKv1hvH_/view?usp=sharing). Then put it in `./collabot/scripts/grasping/trained_model/`
 
@@ -52,18 +54,8 @@ Your json file should look like this.
     "api_base": ""
 }
 ```
-
-## Running Demo without API and ROS
-
-Demo code is at `collabot/scripts/playground_basic.ipynb`. Instructions can be found in the notebook.
-
-## Running Demo with API
-
-Demo code is at `collabot/scripts/playground_API.ipynb`. We provide an example of using QWEN for example. It will be very easy to modify this example for GPT 4. Also, you can modify it to make it suitable for Gemini or other VLMs.
-
-
-## Running Demo in Simulation
-To run our code in simulation, you should have ROS installed on your computer. We encourage you using ROS Noetic. You should download some necessary pkgs for using in [Google Drive](https://drive.google.com/file/d/1QGUl2RNBHzNG-zwv0OoCgkbU0xHuIz6e/view?usp=drive_link). Then, put them under `src`.
+### Downloading Supporting Packages
+To run our code in simulation and for visulization, you should have ROS installed on your computer. We encourage you using ROS Noetic. You need to download some necessary pkgs for using in [Google Drive](https://drive.google.com/file/d/1bK9hPQ6i3jFVAErbMZeUla7R5nztpMGx/view?usp=sharing). Then, put them under `src`.
 
 Your file structure should look like this.
 ```shell
@@ -77,8 +69,19 @@ Your file structure should look like this.
 ├── requirements.txt
 └── robot_gazebo
 ```
+## Running Demo without API and ROS
 
-You should run the following command to compile these pkgs.
+Demo code is at `collabot/scripts/playground_basic.ipynb`. Instructions can be found in the notebook.
+
+## Running Demo with API
+
+Demo code is at `collabot/scripts/playground_API.ipynb`. We provide an example of using QWEN for example. It will be very easy to modify this example for GPT 4. Also, you can modify it to make it suitable for Gemini or other VLMs.
+
+
+## Running Demo in Simulation
+
+
+You should run the following command to compile supporting pkgs.
 ```shell
 cd PATH_to_COLLABOT/collabot/
 catkin_make

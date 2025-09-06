@@ -23,8 +23,11 @@ class Jaka_FK():
         wrist3_2_ee_trans = np.array([0, 0.000, 0.1,0,0,0])
         self.wrist3_2_ee = xyzrpy_to_T(wrist3_2_ee_trans,xyz_first = True)
 
+        current_path = os.path.dirname(os.path.abspath(__file__))
         if debug:
-            model_path = '~/collabot/src/CollaBot/model_description/jaka_robot/meshes'
+            # model_path = '~/collabot/src/CollaBot/model_description/jaka_robot/meshes'
+
+            model_path = os.path.join(current_path,'../../../model_description/jaka_robot/meshes')
             self.points = self.load_points(model_path)
 
         self.dof = 6
@@ -212,8 +215,10 @@ class agv():
     def __init__(self,debug = True):
         self.points = None #N*3
         self.offset_z = -0.2
+        current_path = os.path.dirname(os.path.abspath(__file__))
         if debug:
-            model_path = '~/collabot/src/CollaBot/model_description/agv_description/mesh/collision/'
+            model_path = os.path.join(current_path,'../../../model_description/agv_description/mesh/collision/')
+            # model_path = '~/collabot/src/CollaBot/model_description/agv_description/mesh/collision/'
             self.load_model(model_path)
 
         self.create_self_collision()

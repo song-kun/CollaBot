@@ -144,13 +144,16 @@ class large_obj_grasping:
 
         #LLM part
         api_file_path = os.path.join(gripper_CAD_path, f'../../prompts/api_{api_type}.json')
-        with open(api_file_path, "r") as f:
-            config = json.load(f)
-        self.VLM_model = VLM_model
+        try:
+            with open(api_file_path, "r") as f:
+                config = json.load(f)
+            self.api_key = config["api_key"]
+            self.api_base = config["api_base"]
+            self.VLM_model = VLM_model
+            self.prompt_inter = prompt_interface(self.api_key,self.api_base)
+        except:
+            print(f"failed in load api config from {api_file_path}")
 
-        self.api_key = config["api_key"]
-        self.api_base = config["api_base"]
-        self.prompt_inter = prompt_interface(self.api_key,self.api_base)
         choose_grasp_pose_prompt_path = os.path.join(gripper_CAD_path, '../../prompts/grasp_point_prompts.txt')
         with open(choose_grasp_pose_prompt_path, "r") as f:
             self.choose_grasp_pose_prompt = f.read()
