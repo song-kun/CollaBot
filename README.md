@@ -1,4 +1,4 @@
-# CollaBot: Vision-Language Guided Simultaneous Collaborative Manipulation
+# CollaBot: Vision-Language Guided Simultaneous Collaborative Manipulation of Large Objects
 
 This is the official demo code for CollaBot, the first method that uses large language models and vision-language models to perform simultaneous collaborative manipulation using multi-robot system.
 
