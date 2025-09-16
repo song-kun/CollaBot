@@ -2,16 +2,16 @@
 
 This is the official demo code for CollaBot, the first method that uses large language models and vision-language models to perform simultaneous collaborative manipulation using multi-robot system.
 
-<figure align="center">
-  <img src="media/move_chair.gif" width="700">
-  <figcaption>2 robots perform Table-Chair Alignment Task</figcaption>
-</figure>
+<p align="center">
+  <img src="media/move_chair.gif" width="700"><br>
+  3 robots move a table collaboratively
+</p>
 
 
-<figure align="center">
-  <img src="media/3robot.gif" width="700">
-  <figcaption>3 robots move a table collaboratively</figcaption>
-</figure>
+<p align="center">
+  <img src="media/3robot.gif" width="700"><br>
+  3 robots move a table collaboratively
+</p>
 
 ## Guideline
 
@@ -25,12 +25,15 @@ We mainly divide CollaBot into three parts:
 <div align="center">
   <img src="media/framework.png" width="700">
 </div>
-In this repository, we provide the complete source code for CollaBot. Specifically, we offer a demo that visualizes our methods using Open3D, even if you do not have access to the VLM APIs. We also provide the implementation of CollaBot using Gazebo.
+In this repository, we provide the complete source code for CollaBot including these three parts. Specifically, we offer a demo that visualizes our methods using Open3D, even if you do not have access to the VLM APIs. We also provide the implementation of CollaBot using Gazebo.
+
+We also provide the *appendix.pdf* for your reference, which contains a detailed description of how we handle motion planning with closed-chain constraints.
 
 The repository is structured as follows:
 - A brief description of this work
 - Instructions on how to install the repository
-- A demo for experimenting with our methods
+- Demos for experimenting with our methods
+- Code structure
 
 
 ## Setup Instructions
