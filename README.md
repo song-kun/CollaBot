@@ -1,16 +1,37 @@
-## CollaBot: Vision-Language Guided Simultaneous Collaborative Manipulation
+# CollaBot: Vision-Language Guided Simultaneous Collaborative Manipulation
 
-[[Project Page]]() [[Paper]]() 
+This is the official demo code for CollaBot, the first method that uses large language models and vision-language models to perform simultaneous collaborative manipulation using multi-robot system.
+
+<figure align="center">
+  <img src="media/move_chair.gif" width="700">
+  <figcaption>2 robots perform Table-Chair Alignment Task</figcaption>
+</figure>
+
+
+<figure align="center">
+  <img src="media/3robot.gif" width="700">
+  <figcaption>3 robots move a table collaboratively</figcaption>
+</figure>
+
+## Guideline
+
+<!-- [[Project Page]]() [[Paper]]()  -->
+
+We mainly divide CollaBot into three parts:
+1. Task Inference using VLMs
+2. Collaborative Grasp Pose Generation
+3. Motion Planning for Multiple Robots
 
 <div align="center">
-  <img src="media/move_chair.gif" width="700">
+  <img src="media/framework.png" width="700">
 </div>
+In this repository, we provide the complete source code for CollaBot. Specifically, we offer a demo that visualizes our methods using Open3D, even if you do not have access to the VLM APIs. We also provide the implementation of CollaBot using Gazebo.
 
-This is the official demo code for CollaBot, a method that uses large language models and vision-language models to perform simultaneous collaborative manipulation using multi-robot system.
+The repository is structured as follows:
+- A brief description of this work
+- Instructions on how to install the repository
+- A demo for experimenting with our methods
 
-In this repo, we provide a demo that can visulize our methods using Open3D, and we also provide the implementation of CollaBot using Gazebo.
-
-We will describe how to use our code without ROS. Then, we will introduce how to use proposed method for a spesific mobile manipulator using Gazebo.
 
 ## Setup Instructions
 Firstly, clone this repo.
